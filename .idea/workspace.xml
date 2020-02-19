@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a63b7068-f962-4dac-8811-a6525895809e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/tp3_BinaryTrees/tests/AvlTreeTester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tp3_BinaryTrees/tests/Corrector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tp3_BinaryTrees/tp3/AvlTree$BinaryNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tp3_BinaryTrees/tp3/AvlTree.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/tp3_BinaryTrees/tp3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tp3/AvlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tp3/AvlTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +91,7 @@
       <workItem from="1570203177536" duration="17000" />
       <workItem from="1570203233157" duration="1008000" />
       <workItem from="1570204253997" duration="911000" />
-      <workItem from="1582118835926" duration="682000" />
+      <workItem from="1582118835926" duration="5048000" />
     </task>
     <servers />
   </component>
@@ -103,5 +110,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="834" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582122368101">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="834" y="444" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1582122368101" />
   </component>
 </project>

@@ -7,7 +7,7 @@ import java.util.List;
 public class AvlTree<ValueType extends Comparable<? super ValueType> > {
 
     private BinaryNode<ValueType> root;
-    /*fuck yeah*/
+
     public AvlTree() { }
 
     /**
@@ -94,6 +94,30 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return if parent node should balance
      */
     private boolean insert (ValueType value, BinaryNode<ValueType> currentNode){
+        BinaryNode<ValueType> node;
+        int compareResult = currentNode.value.compareTo(value);
+
+        //value>currentNode.value
+        if(compareResult<0){
+            if(currentNode.right!=null)
+                insert(value,currentNode.right);
+            else{
+                node= new BinaryNode<>(value, currentNode);
+                currentNode.right = node;
+                return true;
+            }
+        }
+        //value<currentNode.value
+        else if(compareResult>0){
+            if(currentNode.left!=null)
+                insert(value,currentNode.left);
+            else{
+                node= new BinaryNode<>(value, currentNode);
+                currentNode.left = node;
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -105,6 +129,17 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return if parent node should balance
      */
     private boolean remove(ValueType value, BinaryNode<ValueType> currentNode) {
+        int compareResult = currentNode.value.compareTo(value);
+        if(contains(value)){
+            if(compareResult<0)
+                remove(value,currentNode.right);
+            else if(compareResult>0)
+                remove(value,currentNode.left);
+            else {
+                remove(value);
+                return true;
+            }
+        }
         return false;
     }
 
@@ -113,6 +148,19 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @param subTree SubTree currently being accessed to verify if it respects the AVL balancing rule
      */
     private void balance(BinaryNode<ValueType> subTree) {
+        if(getLevelCount(subTree.left)- getLevelCount(subTree.right) >0){
+            if(getLevelCount(subTree.left.left)-getLevelCount(subTree.left.right)>0)
+                rotateRight(subTree);
+            else
+                doubleRotateOnLeftChild(subTree);
+        }
+        if(getLevelCount(subTree.left)- getLevelCount(subTree.right) <0){
+            if(getLevelCount(subTree.right.left)-getLevelCount(subTree.right.right)<0)
+                rotateLeft(subTree);
+            else
+                doubleRotateOnRightChild(subTree);
+        }
+
     }
 
     /** TODO O( 1 )
