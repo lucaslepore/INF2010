@@ -1,5 +1,6 @@
 package tp3;
 
+import java.net.BindException;
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
@@ -129,18 +130,25 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return if parent node should balance
      */
     private boolean remove(ValueType value, BinaryNode<ValueType> currentNode) {
+        if(currentNode==null)
+            return false;
         int compareResult = currentNode.value.compareTo(value);
         if(contains(value)){
             if(compareResult<0)
-                remove(value,currentNode.right);
+                return remove(value,currentNode.right);
             else if(compareResult>0)
-                remove(value,currentNode.left);
+                return remove(value,currentNode.left);
             else {
-                remove(value);
+                currentNode.parent.right = currentNode.right;
+                currentNode.parent.left = currentNode.left;
+                if(currentNode.right!=null)
+                    currentNode.right.parent = currentNode.parent;
+                if(currentNode.left!=null)
+                    currentNode.left.parent = currentNode.parent;
                 return true;
             }
         }
-        return false;
+        return false;//return false;
     }
 
     /** TODO O( n )
@@ -168,6 +176,13 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @param node1 Node to become child of its left child
      */
     private void rotateLeft(BinaryNode<ValueType> node1){
+        BinaryNode nodeTemp = node1.right;
+
+        node1.right = nodeTemp.right;
+        nodeTemp.left=node1;
+        nodeTemp.parent = node1.parent;
+        node1.parent = nodeTemp;
+
     }
 
     /** TODO O( 1 )
@@ -175,6 +190,12 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @param node1 Node to become child of its right child
      */
     private void rotateRight(BinaryNode<ValueType> node1){
+        BinaryNode nodeTemp = node1.left;
+
+        node1.left = nodeTemp.right;
+        nodeTemp.right=node1;
+        nodeTemp.parent = node1.parent;
+        node1.parent = nodeTemp;
     }
 
     /** TODO O( 1 )
@@ -182,6 +203,8 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @param node1 Node to become child of the right child of its left child
      */
     private void doubleRotateOnLeftChild(BinaryNode<ValueType> node1){
+        rotateLeft(node1.left);
+        rotateRight(node1);
     }
 
     /** TODO O( 1 )
@@ -189,6 +212,8 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @param node1 Node to become child of the left child of its right child
      */
     private void doubleRotateOnRightChild(BinaryNode<ValueType> node1){
+        rotateRight(node1.right);
+        rotateLeft(node1);
     }
 
     /** TODO O( log n )
@@ -198,7 +223,16 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return if value already exists in the root tree
      */
     private boolean contains(ValueType value, BinaryNode<ValueType> currentNode){
-        return false;
+        if (currentNode==null)
+            return false;
+        int compareResult = currentNode.value.compareTo(value);
+        if(compareResult<0)
+            return contains(value,currentNode.right);
+        else if(compareResult>0)
+            return contains(value,currentNode.left);
+        else return true;
+
+        //return false;
     }
 
     /** TODO O( n )
@@ -206,7 +240,19 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return Number of level contained in subTree including subTree node level
      */
     private int getLevelCount(BinaryNode<ValueType> subTree){
-        return 0;
+        BinaryNode nodeTempRight = subTree;
+        BinaryNode nodeTempLeft = subTree;
+        int compteurRight=0;
+        int compteurLeft=0;
+        while(nodeTempRight.right!=null){
+            nodeTempRight=nodeTempRight.right;
+            compteurRight++;
+        }
+        while(nodeTempRight.left!=null){
+            nodeTempLeft=nodeTempRight.left;
+            compteurLeft++;
+        }
+        return Math.max(compteurLeft,compteurRight);
     }
 
     /** TODO O( log n )
