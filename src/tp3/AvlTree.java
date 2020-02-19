@@ -7,7 +7,7 @@ import java.util.List;
 public class AvlTree<ValueType extends Comparable<? super ValueType> > {
 
     private BinaryNode<ValueType> root;
-/*whatup git*/
+    /*fuck yeah*/
     public AvlTree() { }
 
     /**
