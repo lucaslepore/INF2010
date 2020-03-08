@@ -1,8 +1,6 @@
 package tp3;
 
-import java.util.ArrayDeque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class AvlTree<ValueType extends Comparable<? super ValueType> > {
 
@@ -124,6 +122,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return if parent node should balance
      */
     private boolean remove(ValueType value, BinaryNode<ValueType> currentNode) {
+        if(currentNode == null) return false;
 
         int comparable = value.compareTo(currentNode.value);
 
@@ -131,15 +130,20 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
             if(remove(value, currentNode.right)) balance(currentNode);
         }else if(comparable < 0){
             if(remove(value, currentNode.left)) balance(currentNode);
-        }else{
-            if(currentNode.left != null && currentNode.right != null) // Two children
-            {
-                currentNode.value = findMin(currentNode.right).value;
-                if(remove(currentNode.value, currentNode.right)) balance(currentNode);
-            }
-            else
-                currentNode = ( currentNode.left != null ) ? currentNode.left : currentNode.right;
+        }else {
+            if(currentNode.left == null && currentNode.right == null){
+                if(value.equals(root.value)) root = null;
+                else if(currentNode.parent.left != null && currentNode.parent.left.value.equals(value)){
+                    currentNode.parent.left = null;
+                }else if(currentNode.parent.right != null && currentNode.parent.right.value.equals(value)){
+                    currentNode.parent.right = null;
+                }
                 return true;
+            }else if(currentNode.right != null){
+                currentNode.parent.left = currentNode.right;
+            }else{
+                currentNode.parent.right = currentNode.left;
+            }
         }
         return false;
     }
@@ -243,12 +247,18 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         else return currentNode;
     }
 
-    /** TODO O( n )
+    /** O( n )
      * Builds items which should contain all values within the root tree in ascending order
      * @param currentNode Node currently being accessed in this recursive method
      * @param items List being modified to contain all values in the root tree in ascending order
      */
     private void infixOrder(BinaryNode<ValueType> currentNode, List<ValueType> items){
+        if (currentNode != null)
+        {
+            infixOrder(currentNode.left, items);
+            items.add(currentNode.value);
+            infixOrder(currentNode.right, items);
+        }
     }
 
     /** TODO O( n )
@@ -257,6 +267,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @param items List being modified to contain all values in the root tree in level order from top to bottom
      */
     private void levelOrder(ArrayDeque<BinaryNode<ValueType>> nodesToCheck, List<ValueType> items) {
+
     }
 
 
@@ -275,4 +286,5 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         }
 
     }
+    
 }
