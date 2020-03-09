@@ -82,7 +82,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         return items;
     }
 
-    /** TODO O( log n )
+    /** O( log n )
      * Adds value to the tree and keeps it as a balanced AVL Tree
      * Should call balance only if insertion succeeds
      * AVL Trees do not contain duplicates
@@ -114,7 +114,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         return false;
     }
 
-    /** TODO O ( log n )
+    /** O ( log n )
      * Removes value from the tree and keeps it as a balanced AVL Tree
      * Should call balance only if removal succeeds
      * @param value value to remove from the tree
@@ -282,7 +282,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         }
     }
 
-    /** TODO O( n )
+    /** O( n )
      * Builds items which should contain all values within the root tree in level order from top to bottom
      * @param nodesToCheck Queue for non-recursive algorithm
      * @param items List being modified to contain all values in the root tree in level order from top to bottom
