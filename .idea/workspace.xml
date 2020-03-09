@@ -35,6 +35,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ecole/log2010/tp2_Maps" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -97,6 +103,7 @@
       <workItem from="1583679964415" duration="1365000" />
       <workItem from="1583682330166" duration="16094000" />
       <workItem from="1583702285556" duration="29000" />
+      <workItem from="1583770052139" duration="5191000" />
     </task>
     <servers />
   </component>
@@ -129,46 +136,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1582228755648" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1583701681708">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="278" key="GridCell.Tab.0.bottom" timestamp="1583775068456">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681708" />
     <state width="1877" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583701355043" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1583701681707">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583775068456" />
+    <state width="1807" height="278" key="GridCell.Tab.0.center" timestamp="1583775068455">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681707" />
     <state width="1877" height="210" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583701355043" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1583701681707">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="278" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583775068455" />
+    <state width="1807" height="278" key="GridCell.Tab.0.left" timestamp="1583775068455">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681707" />
     <state width="1877" height="210" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583701355043" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1583701681708">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="278" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583775068455" />
+    <state width="1807" height="278" key="GridCell.Tab.0.right" timestamp="1583775068455">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681708" />
     <state width="1877" height="210" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583701355043" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1583701681708">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583775068455" />
+    <state width="1807" height="344" key="GridCell.Tab.1.bottom" timestamp="1583774986497">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681708" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583699566224" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1583701681708">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="344" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1583774986497" />
+    <state width="1807" height="344" key="GridCell.Tab.1.center" timestamp="1583774986496">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681708" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583699566224" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1583701681708">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="344" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1583774986496" />
+    <state width="1807" height="344" key="GridCell.Tab.1.left" timestamp="1583774986495">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681708" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583699566224" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1583701681708">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1807" height="344" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1583774986495" />
+    <state width="1807" height="344" key="GridCell.Tab.1.right" timestamp="1583774986496">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583701681708" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583699566224" />
+    <state width="1807" height="344" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1583774986496" />
+    <state x="713" y="265" width="551" height="575" key="RollbackChangesDialog" timestamp="1583772569653">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="713" y="265" width="551" height="575" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1583772569653" />
     <state x="461" y="163" key="SettingsEditor" timestamp="1582122011144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,6 +202,15 @@
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583684399186" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/tests/AvlTreeTester.java</url>
+          <line>202</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((AvlTree)this).root" custom="tp3.AvlTree" />
