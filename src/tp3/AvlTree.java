@@ -42,7 +42,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return Max level contained in our root tree
      */
     public int getHeight() {
-        return getLevelCount(root) - 1;
+        return getLevelCount(root) ;
     }
 
     /**
@@ -127,9 +127,9 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         int comparable = value.compareTo(currentNode.value);
 
         if(comparable > 0) {
-            if(remove(value, currentNode.right)) balance(currentNode);
+            if(remove(value, currentNode.right)) balance(root);
         }else if(comparable < 0){
-            if(remove(value, currentNode.left)) balance(currentNode);
+            if(remove(value, currentNode.left)) balance(root);
         }else {
             if(currentNode.left == null && currentNode.right == null){
                 if(value.equals(root.value)) root = null;
@@ -180,7 +180,17 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         BinaryNode<ValueType> node = node1.left;
 
         node1.left = node.right;
+        if(node.right !=null)node.right.parent = node1.left;
+        node.parent = node1.parent;
+
+        if(node.parent == null)root=node;
+        else node1.parent.right = node;
         node.right = node1;
+        node1.parent = node;
+
+
+        getLevelCount(node1);
+        getLevelCount(node);
     }
 
     /** TODO O( 1 )
@@ -191,7 +201,16 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
         BinaryNode<ValueType> node = node1.right;
 
         node1.right = node.left;
+        if(node.left !=null)node.left.parent = node1.right;
+        node.parent = node1.parent;
+
+        if(node.parent == null) root=node;
+        else node1.parent.left = node;
         node.left = node1;
+        node1.parent = node;
+
+        getLevelCount(node1);
+        getLevelCount(node);
     }
 
     /** TODO O( 1 )
@@ -201,6 +220,8 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
     private void doubleRotateOnLeftChild(BinaryNode<ValueType> node1){
         rotateRight(node1.left);
         rotateLeft(node1);
+
+
     }
 
     /** TODO O( 1 )
@@ -233,7 +254,7 @@ public class AvlTree<ValueType extends Comparable<? super ValueType> > {
      * @return Number of level contained in subTree including subTree node level
      */
     private int getLevelCount(BinaryNode<ValueType> subTree){
-        if (subTree == null) return 0;
+        if (subTree == null) return -1;
         return 1 + Math.max(getLevelCount(subTree.left), getLevelCount(subTree.right));
     }
 
